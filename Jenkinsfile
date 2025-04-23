@@ -24,5 +24,11 @@ pipeline {
                 git url: 'https://github.com/spring-projects/spring-petclinic.git', branch: 'main'
             }
         }
+
+        stage('Build') {
+            steps {
+                bat '.\\mvnw.cmd clean package'
+            }
+        }
     }
 }
